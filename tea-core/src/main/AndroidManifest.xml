@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.yamu.tea_core">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--<application-->
+        <!--android:allowBackup="true"-->
+        <!--android:label="Tea"-->
+        <!--android:supportsRtl="true" />-->
+</manifest>

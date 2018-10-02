@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/topbar_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/qmui_topbar_height"
+        android:fitsSystemWindows="true"
+        android:gravity="center_vertical"
+        app:qmui_topbar_bg_color="@color/tea_app_theme_color"
+        app:qmui_topbar_title_color="@color/qmui_config_color_white"
+        app:qmui_topbar_title_gravity="left_center" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/topbar_sign_up">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp">
+            <!--背景、图标 logo-->
+            <ImageView
+                android:id="@+id/image_sign_in_logo"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:src="@mipmap/sign_in_logo" />
+
+            <!--登录表单布局-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <EditText
+                    android:id="@+id/et_sign_in_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:drawableLeft="@drawable/et_sign_in_phone_icon_left"
+                    android:drawablePadding="16dp"
+                    android:drawableStart="@drawable/et_sign_in_phone_icon_left"
+                    android:hint="你的手机号"
+                    android:inputType="phone"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_sign_in_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="16dp"
+                    android:drawableLeft="@drawable/et_sign_in_password_icon_left"
+                    android:drawablePadding="16dp"
+                    android:drawableStart="@drawable/et_sign_in_password_icon_left"
+                    android:hint="请输入你的密码"
+                    android:inputType="textPassword"
+                    android:textSize="14sp" />
+
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    android:id="@+id/bt_action_sign_in"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
+                    android:enabled="false"
+                    android:padding="8dp"
+                    android:text="登录"
+                    android:textColor="@color/s_btn_red_text"
+                    app:qmui_backgroundColor="@color/s_btn_red_bg"
+                    app:qmui_borderWidth="0dp" />
+
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    android:id="@+id/bt_action_sign_up_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
+                    android:padding="8dp"
+                    android:text="注册"
+                    android:textColor="@color/s_btn_red_bg"
+                    app:qmui_backgroundColor="@color/qmui_config_color_white"
+                    app:qmui_borderColor="@color/s_btn_red_bg" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>
