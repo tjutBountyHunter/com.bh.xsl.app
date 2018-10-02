@@ -40,7 +40,6 @@ public class SignInDelegate extends TeaDelegate implements TextWatcher {
     @BindView(R2.id.et_sign_in_password)
     EditText mPassword = null;
 
-
     @OnClick(R2.id.bt_action_sign_up_link)
     void clickSignUp() {
         start(new SignUpDelegate());
