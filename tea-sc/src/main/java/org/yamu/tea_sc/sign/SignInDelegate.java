@@ -33,7 +33,6 @@ public class SignInDelegate extends TeaDelegate implements TextWatcher {
     QMUIRoundButton mSignUpLink = null;
     @BindView(R2.id.bt_action_sign_in)
     QMUIRoundButton mActionSignIn = null;
-
     @BindView(R2.id.et_sign_in_phone)
     EditText mPhone = null;
 
