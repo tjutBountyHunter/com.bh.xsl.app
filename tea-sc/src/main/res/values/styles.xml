@@ -1,0 +1,36 @@
+<resources>
+
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="QMUI.Compat">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="qmui_config_color_blue">@color/main_color</item>
+        <item name="qmui_round_btn_bg_color">@color/s_btn_red_bg</item>
+        <item name="qmui_round_btn_border_color">@color/s_btn_red_border</item>
+        <item name="qmui_round_btn_text_color">@color/s_btn_red_text</item>
+
+    </style>
+
+
+    <style name="hintText">
+        <item name="android:textColor">@drawable/hint</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="transparentText">
+        <item name="android:visibility">gone</item>
+        <item name="android:textColor">@color/qmui_config_color_transparent</item>
+        <item name="android:textSize">0sp</item>
+    </style>
+
+    <style name="levelIconText">
+        <item name="android:textColor">@color/app_color_white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

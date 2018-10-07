@@ -9,6 +9,7 @@ import org.yamu.tea_core.net.callback.ISuccess;
 import org.yamu.tea_core.net.callback.RequestCallbacks;
 import org.yamu.tea_core.net.donwload.DonwloadHandler;
 import org.yamu.tea_core.ui.loader.LoaderStyle;
+import org.yamu.tea_core.ui.loader.SignLoader;
 import org.yamu.tea_core.ui.loader.TeaLoader;
 
 import java.io.File;
@@ -80,7 +81,7 @@ public class RestClient {
         }
 
         if (LOADER_STYLE != null) {
-            TeaLoader.showLoading(CONTEXT, LOADER_STYLE);
+            SignLoader.showLoading(CONTEXT, LOADER_STYLE.name());
         }
 
         switch (method) {

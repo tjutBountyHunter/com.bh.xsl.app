@@ -35,6 +35,5 @@ dependencies {
     api project(':tea-core')
     //butterknife依赖
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    //qmui依赖
-    api 'com.qmuiteam:qmui:1.1.3'
+
 }

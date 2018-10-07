@@ -11,6 +11,7 @@ public enum ConfigKeys {
     CONFIG_READY,
     ICON,
     LOAD_DELAYED,
-    INTERCEPTOR
+    INTERCEPTOR,
+    USERID
 
 }

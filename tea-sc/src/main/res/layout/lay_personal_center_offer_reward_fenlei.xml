@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_radio_group"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/app_color_white"
+    android:divider="@drawable/qmui_divider"
+    android:orientation="horizontal"
+    android:showDividers="end">
+
+    <RadioGroup
+        android:id="@+id/rabt_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rabt_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_ground"
+            android:button="@null"
+            android:padding="4dp"
+            android:text="全部"
+            android:textColor="@color/s_btn_ground__text" />
+
+        <RadioButton
+            android:id="@+id/rabt_yifa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_ground"
+            android:button="@null"
+            android:padding="4dp"
+            android:text="已发"
+            android:textColor="@color/s_btn_ground__text" />
+
+        <RadioButton
+            android:id="@+id/rabt_yijie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_ground"
+            android:button="@null"
+            android:padding="4dp"
+            android:text="已接"
+            android:textColor="@color/s_btn_ground__text" />
+
+        <RadioButton
+            android:id="@+id/rabt_daiwanchen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_ground"
+            android:button="@null"
+            android:padding="4dp"
+            android:text="待完成"
+            android:textColor="@color/s_btn_ground__text" />
+
+        <RadioButton
+            android:id="@+id/rabt_wanchen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_ground"
+            android:button="@null"
+            android:padding="4dp"
+            android:text="完成"
+            android:textColor="@color/s_btn_ground__text" />
+    </RadioGroup>
+
+</LinearLayout>

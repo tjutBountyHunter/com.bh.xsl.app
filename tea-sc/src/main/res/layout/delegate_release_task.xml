@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.qmuiteam.qmui.widget.QMUITopBar
+            android:id="@+id/topbar_release"
+            android:fitsSystemWindows="true"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/qmui_topbar_height"
+            app:qmui_topbar_bg_color="@color/tea_app_theme_color"
+            app:qmui_topbar_title_color="@color/qmui_config_color_white"
+            app:qmui_topbar_title_gravity="left_center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:text="发布"
+                android:textColor="@color/qmui_config_color_white" />
+        </com.qmuiteam.qmui.widget.QMUITopBar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/topbar_release">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="16dp"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/tv_release_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="悬赏令"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/et_release"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:background="@null"
+                        android:gravity="left|top"
+                        android:hint="悬赏内容"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@color/qmui_config_color_gray_9"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:showDividers="middle">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_release_deadline_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="截止时间：" />
+
+                        <TextView
+                            android:id="@+id/tv_release_deadline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/tv_release_deadline"
+                            android:gravity="right"
+                            android:text="点我设置"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_release_money3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="悬赏价格：" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/tv_release_money3"
+                            android:background="@null"
+                            android:gravity="right"
+                            android:hint="价格要公道哦"
+                            android:singleLine="true"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_tag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_release_tag_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="任务标签：" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/tv_release_tag_title"
+                            android:background="@null"
+                            android:gravity="right"
+                            android:singleLine="true"
+                            android:text="+"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <com.qmuiteam.qmui.widget.QMUIFloatLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rl_tag"
+                        android:layout_marginTop="8dp"
+                        app:qmui_childHorizontalSpacing="2dp"
+                        app:qmui_childVerticalSpacing="2dp"
+                        app:qmui_maxNumber="9">
+
+                        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="2dp"
+                            android:paddingLeft="4dp"
+                            android:paddingRight="4dp"
+                            android:paddingTop="2dp"
+                            android:text="跑腿"
+                            android:textSize="12sp" />
+
+
+                    </com.qmuiteam.qmui.widget.QMUIFloatLayout>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.qmuiteam.qmui.widget.QMUIFloatLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:qmui_childHorizontalSpacing="2dp"
+                    app:qmui_childVerticalSpacing="2dp"
+                    app:qmui_maxNumber="9">
+
+
+                    <ImageButton
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/border_button"
+                        android:src="@drawable/ic_xiangji" />
+                </com.qmuiteam.qmui.widget.QMUIFloatLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>

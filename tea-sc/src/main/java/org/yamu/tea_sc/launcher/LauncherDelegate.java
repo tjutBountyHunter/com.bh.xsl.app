@@ -13,6 +13,7 @@ import org.yamu.tea_core.ui.launcher.ScrollLauncherTag;
 import org.yamu.tea_core.util.storage.TeaPreference;
 import org.yamu.tea_core.util.timer.BaseTimerTask;
 import org.yamu.tea_core.util.timer.ITimerListener;
+import org.yamu.tea_core.util.ui.CommonUtil;
 import org.yamu.tea_sc.R;
 import org.yamu.tea_sc.R2;
 import org.yamu.tea_sc.sign.SignInDelegate;
@@ -59,6 +60,7 @@ public class LauncherDelegate extends TeaDelegate implements ITimerListener {
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
         initTimer();
+
     }
 
     // 判断是否展示滑动启动页
@@ -68,7 +70,9 @@ public class LauncherDelegate extends TeaDelegate implements ITimerListener {
         if (!TeaPreference.getAppFlag(ScrollLauncherTag.HAS_FIRST_LAUNCHER_APP.name())) {
             startWithPop(new LauncherScrollDelegate());
         } else {
+            CommonUtil.cancelFullScreen(getActivity());
             // 检查用户是否登录了APP
+
             startWithPop(new SignInDelegate());
         }
     }

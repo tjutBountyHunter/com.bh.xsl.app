@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_stats_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+        android:id="@+id/image_stats_text"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@color/qmui_config_color_blue"
+        app:qmui_border_width="0dp"
+        app:qmui_is_circle="true" />
+
+    <TextView
+        android:id="@+id/tv_stats_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:text="已接"
+        android:textColor="@color/qmui_config_color_blue" />
+
+
+</LinearLayout>

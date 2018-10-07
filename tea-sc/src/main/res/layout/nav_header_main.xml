@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@drawable/side_nav_bar"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+
+    <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+        android:id="@+id/imageView_na_touxiang"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/nav_header_desc"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        app:layout_constraintTop_toTopOf="parent"
+        app:qmui_is_circle="true"
+        app:qmui_selected_border_width="0dp"
+        app:srcCompat="@mipmap/touxiang" />
+
+    <TextView
+        android:id="@+id/tv_na_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="昵称"
+        android:textColor="@color/app_color_white"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/imageView_na_touxiang"
+        app:layout_constraintTop_toBottomOf="@id/imageView_na_touxiang" />
+
+
+</android.support.constraint.ConstraintLayout>

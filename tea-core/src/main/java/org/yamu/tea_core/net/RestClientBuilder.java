@@ -111,7 +111,7 @@ public class RestClientBuilder {
 
     public final RestClientBuilder loader(Context context) {
         this.mContext = context;
-        this.mLoaderStyle = LoaderStyle.BallClipRotatePulseIndicator;
+        this.mLoaderStyle = LoaderStyle.PacmanIndicator;
         return this;
     }
 

@@ -12,6 +12,7 @@ import org.yamu.tea_core.delegate.TeaDelegate;
 import org.yamu.tea_core.ui.launcher.LauncherHolderCreator;
 import org.yamu.tea_core.ui.launcher.ScrollLauncherTag;
 import org.yamu.tea_core.util.storage.TeaPreference;
+import org.yamu.tea_core.util.ui.CommonUtil;
 import org.yamu.tea_sc.R;
 import org.yamu.tea_sc.sign.SignInDelegate;
 
@@ -54,6 +55,7 @@ public class LauncherScrollDelegate extends TeaDelegate implements OnItemClickLi
         if (position == INTEGERS.size() - 1) {
             Log.d("滑动启动页最后一页点击", "设置第一次启动flag为true");
             TeaPreference.setAppFlag(ScrollLauncherTag.HAS_FIRST_LAUNCHER_APP.name(), true);
+            CommonUtil.cancelFullScreen(getActivity());
             startWithPop(new SignInDelegate());
         }
     }

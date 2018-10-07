@@ -7,11 +7,13 @@
 
     <!--主题色圆形按钮颜色-->
     <color name="tea_btn_color_red">#EE4000</color>
-    <color name="tea_btn_color_red_disabled">#CDC9C9</color>
-    <color name="tea_btn_color_red_pressed">#CD3700</color>
+    <color name="tea_btn_color_red_disabled">#FFBCA3</color>
+    <color name="tea_btn_color_red_pressed">#BD3200</color>
 
     <color name="tea_btn_color_red_text">#FFFFFF</color>
-    <color name="tea_btn_color_red_text_disabled">#AAAAAA</color>
-    <color name="tea_btn_color_red_text_pressed">#CCCCCC</color>
+    <color name="tea_btn_color_red_text_disabled">#F2F2F2</color>
+    <color name="tea_btn_color_red_text_pressed">#E6E6E6</color>
+
+    <color name="tea_glod">#c37e00</color>
 
 </resources>

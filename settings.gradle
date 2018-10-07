@@ -1,1 +1,1 @@
-include ':example', ':tea-annotations',  ':tea-compiler', ':tea-core', ':tea-sc'
+include ':example', ':tea-annotations', ':tea-compiler', ':tea-core', ':tea-sc'

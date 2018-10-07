@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.qmuiteam.qmui.widget.QMUITopBar;
 import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
@@ -53,11 +55,33 @@ public class SignUpDelegate extends TeaDelegate implements TextWatcher, ITimerLi
 
     @SuppressLint("ResourceAsColor")
     @OnClick(R2.id.tv_ver_code)
-    void onClickSignUp() {
-        mActionCode.setEnabled(false);
-        mActionCode.setTextColor(getResources().getColor(R.color.qmui_config_color_gray_7));
-        initTimer();
+    void onClickgetCode() {
+        if (checkPhoneFormat()) {
+            mActionCode.setEnabled(false);
+            initTimer();
+        }
     }
+
+    @OnClick(R2.id.bt_action_next)
+    void onClickNext() {
+//        if (checkForm()) {
+//            // 提交表单
+//        }
+        start(AuthDelegate.newInstance());
+    }
+
+    private boolean checkPhoneFormat() {
+        if (mPhone != null) {
+            if (mPhone.getText().toString().trim().length() != 11) {
+                Toast.makeText(getContext(), "手机格式不正确", Toast.LENGTH_LONG).show();
+                return false;
+            }
+            return true;
+        }
+        return false;
+    }
+
+    private static SignUpDelegate INSTANCE;
 
     private void initTimer() {
         mTimer = new Timer();
@@ -65,40 +89,35 @@ public class SignUpDelegate extends TeaDelegate implements TextWatcher, ITimerLi
         mTimer.schedule(task, 0, 1000);
     }
 
-    public static SignUpDelegate newInstance(boolean isPopbackEnable) {
-        Bundle args = new Bundle();
-        args.putBoolean("isPopbackEnable", isPopbackEnable);
-        SignUpDelegate fragment = new SignUpDelegate();
-        fragment.setArguments(args);
-        return fragment;
+    public static SignUpDelegate newInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new SignUpDelegate();
+            Bundle args = new Bundle();
+            INSTANCE.setArguments(args);
+        }
+        return INSTANCE;
     }
 
     private boolean checkForm() {
+        String message = "";
         final String phone = mPhone.getText().toString().trim();
         final String password = mPassword.getText().toString().trim();
         final String rePassword = mRePassword.getText().toString().trim();
         final String code = mCode.getText().toString().trim();
 
-        boolean isPass = true;
+        boolean isPass = false;
 
         if (phone.isEmpty() || phone.length() != 11) {
-            mPhone.setError("请输入手机号");
-        } else {
-            mPhone.setError(null);
+            message = "手机格式不正确";
+        } else if (password.isEmpty() || password.length() > 16 || password.length() < 6) {
+            message = "密码格式不正确";
+        } else if (rePassword.isEmpty() || !rePassword.equals(password)) {
+            message = "密码输入不一致";
         }
-
-        if (password.isEmpty() || password.length() > 16 || password.length() < 6) {
-            mPassword.setError("请正确填写密码");
-        } else {
-            mPassword.setError(null);
-        }
-
-        if (rePassword.isEmpty() || rePassword.equals(password)) {
-            mRePassword.setError("密码不一致");
-        } else {
-            mRePassword.setError(null);
-        }
-
+        if ("".equals(message))
+            isPass = true;
+        else
+            Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
         return isPass;
     }
 
@@ -121,6 +140,7 @@ public class SignUpDelegate extends TeaDelegate implements TextWatcher, ITimerLi
             topBar.setTitleGravity(Gravity.CENTER);
         }
         topBar.setTitle("注册");
+        checkgetCodeEnable();
     }
 
     private void setTextChangedListener() {
@@ -171,14 +191,25 @@ public class SignUpDelegate extends TeaDelegate implements TextWatcher, ITimerLi
                         if (mTimer != null) {
                             mTimer.cancel();
                             mTimer = null;
-                            mActionCode.setEnabled(true);
-                            mActionCode.setText("重新获取");
-                            mActionCode.setTextColor(getResources().getColor(R.color.tea_app_theme_color));
                             mCount = 60;
+                            mActionCode.setText("重新获取");
                         }
                     }
                 }
+                checkgetCodeEnable();
             }
         });
+    }
+
+    private void checkgetCodeEnable() {
+        if (mActionCode != null) {
+            if (mCount != 60) {
+                mActionCode.setEnabled(false);
+                mActionCode.setTextColor(getResources().getColor(R.color.qmui_config_color_gray_7));
+            } else {
+                mActionCode.setEnabled(true);
+                mActionCode.setTextColor(getResources().getColor(R.color.tea_app_theme_color));
+            }
+        }
     }
 }

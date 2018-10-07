@@ -1,9 +1,12 @@
 package org.yamu.tea_core.ui.loader;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.wang.avi.AVLoadingIndicatorView;
 import com.wang.avi.Indicator;
+
+import org.yamu.tea_core.R;
 
 import java.util.WeakHashMap;
 

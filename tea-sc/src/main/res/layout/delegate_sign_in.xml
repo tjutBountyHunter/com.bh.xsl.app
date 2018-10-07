@@ -3,23 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <com.qmuiteam.qmui.widget.QMUITopBar
-        android:id="@+id/topbar_sign_up"
+        android:id="@+id/topbar_sign_in"
         android:layout_width="match_parent"
         android:layout_height="?attr/qmui_topbar_height"
         android:fitsSystemWindows="true"
         android:gravity="center_vertical"
         app:qmui_topbar_bg_color="@color/tea_app_theme_color"
         app:qmui_topbar_title_color="@color/qmui_config_color_white"
-        app:qmui_topbar_title_gravity="left_center" />
+        app:qmui_topbar_title_gravity="center">
+
+        <TextView
+            android:id="@+id/tv_forget_password_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="？忘记密码"
+            android:textColor="@color/qmui_config_color_white" />
+    </com.qmuiteam.qmui.widget.QMUITopBar>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@id/topbar_sign_up">
+        app:layout_constraintTop_toBottomOf="@id/topbar_sign_in">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,6 +64,7 @@
                     android:drawableStart="@drawable/et_sign_in_phone_icon_left"
                     android:hint="你的手机号"
                     android:inputType="phone"
+                    android:maxLength="11"
                     android:textSize="14sp" />
 
                 <EditText
@@ -62,6 +77,7 @@
                     android:drawableStart="@drawable/et_sign_in_password_icon_left"
                     android:hint="请输入你的密码"
                     android:inputType="textPassword"
+                    android:maxLength="16"
                     android:textSize="14sp" />
 
                 <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton

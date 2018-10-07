@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tv_hunter_tag"
+    android:layout_width="wrap_content"
+    android:layout_height="24dp"
+    android:layout_marginLeft="8dp"
+    android:paddingBottom="2dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="2dp"
+    android:text="标签"
+    android:textColor="@color/app_color_white"
+    android:textSize="11sp"
+    app:qmui_backgroundColor="@color/main_color" />
+
+
+
+
+
+
+
+
+

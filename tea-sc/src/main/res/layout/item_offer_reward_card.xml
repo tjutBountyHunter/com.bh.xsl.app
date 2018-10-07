@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main_background"
+    android:clickable="true">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+                android:id="@+id/image_offer_center_touxiang"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@mipmap/touxiang"
+                app:qmui_is_circle="true" />
+
+            <TextView
+                android:id="@+id/tv_nichen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="昵称"
+                app:layout_constraintLeft_toRightOf="@id/image_offer_center_touxiang" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="今天12:45"
+                android:textColor="@color/qmui_config_color_gray_7"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/image_offer_center_touxiang"
+                app:layout_constraintLeft_toRightOf="@id/image_offer_center_touxiang" />
+
+
+            <org.yamu.tea_sc.widget.StatsTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_stats_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="截止时间：2015-05-23"
+                android:textColor="@color/qmui_config_color_blue"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/image_offer_center_touxiang"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="有人借我一本编程思想吗？"
+                app:layout_constraintTop_toBottomOf="@id/image_offer_center_touxiang" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</FrameLayout>

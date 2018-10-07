@@ -3,6 +3,7 @@ package org.yamu.tea_core.net.callback;
 import android.os.Handler;
 
 import org.yamu.tea_core.ui.loader.LoaderStyle;
+import org.yamu.tea_core.ui.loader.SignLoader;
 import org.yamu.tea_core.ui.loader.TeaLoader;
 
 import retrofit2.Call;
@@ -40,6 +41,8 @@ public class RequestCallbacks implements Callback<String> {
             if (ERROR != null)
                 ERROR.onError(response.code(), response.message());
         }
+        if (REQUEST != null)
+            REQUEST.onRequestEnd();
         stopLoading();
     }
 
@@ -57,9 +60,10 @@ public class RequestCallbacks implements Callback<String> {
             HANDLER.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    TeaLoader.stopLoading();
+                    SignLoader.stopLoading();
                 }
             }, 1000);
         }
     }
+
 }

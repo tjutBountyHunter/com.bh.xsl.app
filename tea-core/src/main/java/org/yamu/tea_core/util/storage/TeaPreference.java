@@ -69,4 +69,15 @@ public class TeaPreference {
         return getAppPreference()
                 .getBoolean(key, false);
     }
+
+    public static void setAppInfimation(String key, String value) {
+        getAppPreference()
+                .edit()
+                .putString(key, value)
+                .apply();
+    }
+
+    public static String getAppInfimation(String key) {
+        return getAppPreference().getString(key, "Empty");
+    }
 }
